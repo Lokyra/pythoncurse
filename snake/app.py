@@ -8,7 +8,10 @@ def main(stdscr):
 
     y, x = 0, 0
 
-    stdscr.addch(y, x, "@")
+    char = "@"
+    space = " "
+
+    stdscr.addstr(y, x, char)
 
     stdscr.refresh()
 
@@ -29,14 +32,18 @@ def main(stdscr):
         elif key == "KEY_RIGHT":
             x = min(x + 1, stdscr.getmaxyx()[1] - 1)
 
+        elif key == "a":
+            char = char + "@"
+            space = space + " "
+
         elif key == "q":
             break
 
-        stdscr.addch(cur_y, cur_x, "x")
+        stdscr.addstr(cur_y, cur_x, space)
 
         stdscr.move(y, x)
 
-        stdscr.addch("@")
+        stdscr.addstr(char)
 
         stdscr.refresh()
 
