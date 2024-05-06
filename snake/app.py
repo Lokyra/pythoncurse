@@ -15,7 +15,7 @@ def main(stdscr):
     while True:
         key = stdscr.getkey()
 
-        cur_y, cur_x = stdscr.getyx()
+        cur_y, cur_x = y, x
 
         if key == "KEY_UP":
             y = max(y - 1, 0)
@@ -32,7 +32,7 @@ def main(stdscr):
         elif key == "q":
             break
 
-        stdscr.addch(cur_y, cur_x, " ")
+        stdscr.addch(cur_y, cur_x, "x")
 
         stdscr.move(y, x)
 
